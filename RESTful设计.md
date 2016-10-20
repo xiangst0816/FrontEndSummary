@@ -1,4 +1,4 @@
-# RESTful API设计指南
+# RESTful API
 
 ## RESTful架构
 
