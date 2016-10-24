@@ -54,6 +54,7 @@ console.log(obj2);
 ## Object.assign ES6 的新函数
 
 用法如下：
+ta
 ```
 var obj1 = { a: 10, b: 20, c: 30 };
 var obj2 = Object.assign({}, obj1);
