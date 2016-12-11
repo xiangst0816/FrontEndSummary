@@ -31,7 +31,7 @@ var vm = new Vue({
             this.getAnswer()
         }
     },
-    //5. 计算属性-
+    //4. 计算属性-
     computed: {
         // a computed getter
         reversedMessage: function () {
@@ -51,8 +51,6 @@ var vm = new Vue({
             }
         }
     },
-    //3. 模板
-
     //5. 方法及事件处理
     methods: {
         say: function (message) {
@@ -417,7 +415,7 @@ Vue组件的核心思想就三部分：数据(props)、事件(event)、内容分
 ```javascript
 
 Vue.component('child', {
-    // data必须是函数，因为对象是引用类型，会在不同组件见公用
+    // data必须是函数，因为对象是引用类型，会在不同组件间共用
     data: function () {
         return {
             counter: 0,
@@ -485,18 +483,40 @@ Vue.component('child', {
 
 ### 1. 使用方法
 
-全局组件
+#### 全局组件
+
+```html
+<div id="example">
+  <my-component></my-component>
+</div>
+```
+
+```javascript
+// 注册
+Vue.component('my-component', {
+  template: '<div>A custom component!</div>'
+})
+// 创建根实例
+new Vue({
+  el: '#example'
+})
+```
 
 
-局部组件
+#### 局部组件
 
-
-
-
-
-
-
-
+```javascript
+var Child = {
+  template: '<div>A custom component!</div>'
+}
+new Vue({
+  // ...
+  components: {
+    // <my-component> 将只在父模板可用
+    'my-component': Child
+  }
+})
+```
 
 
 ### 2. 内部数据(data)
@@ -670,7 +690,7 @@ slot的动作都是在html中下功夫，具体做法：在父组件中，子组
 ## 高级部分
 
 
-### 异步队列更新
+### 1. 异步队列更新
 
 为了在数据变化之后等待 Vue 完成更新 DOM ，可以在数据变化之后立即使用``` Vue.nextTick(callback)``` 。这样回调在 DOM 更新完成后就会调用。如果是组件内的话，使用``` this.nextTick(callback)```即可。
 
