@@ -1,4 +1,4 @@
-# Vue2.0之去掉组件的click事件的native修饰
+# Vue2.0之去掉组件click事件的native修饰
 
 这个是在组件开发中遇到的问题，当时我在编写button的组件，模板是这样的：
 
@@ -65,6 +65,6 @@ export default{
 
 也许读者能看出来，我正在参照IONIC2.X的组件API写Vue2.0的功能组件，目前只完成了：ActionSheet、Button、Icon、Alert、Toast这几个，一边看IONIC源码，一边将思路总结写成Vue代码，也就是花点时间。积累自己的组件库希望以后能开发快点。
 
-现在项目地址在[这里]()，前期以实现功能为主，不建议用在生产环境，读读代码实现思路就好，中文备注都做好了。
+现在项目地址在[这里](https://github.com/xiangsongtao/VueMobile)，前期以实现功能为主，不建议用在生产环境，读读代码实现思路就好，中文备注都做好了。
 
 (完)
